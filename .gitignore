@@ -1,0 +1,8 @@
+.env/
+__pycache__/
+./__pycache__/
+./controllers/__pycache__/main.cpython-312.pyc
+# Ignore all Python bytecode files
+*.pyc
+__pycache__/
+
