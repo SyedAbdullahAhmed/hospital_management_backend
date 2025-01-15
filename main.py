@@ -21,10 +21,19 @@ admins = database.get_collection("admins")
 
 app = FastAPI()
 
-origins = ["http://localhost:3000"]  
+origins = [
+    "http://localhost:3000", 
+    "https://hospital-management-frontend-ten.vercel.app"
+]
+
 app.add_middleware(
-    CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"]
+    CORSMiddleware,
+    allow_origins=origins,  # Include your frontend URL here
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods
+    allow_headers=["*"]   # Allows all headers
 )
+
 
 # admin login
 @app.get("/")
